@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <title>關於鼎鋒</title>
+  <link rel="stylesheet" href="./header.css">
+  <style>
+    html, body {
+      font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      background: #1C1C1C;
+      color: white;
+    }
+
+    .wrapper {
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .headerBackground {
+      width: 100%;
+      height: 700px;
+      background: url(./img_sorces/header2.jpg);
+      background-attachment: fixed;
+      background-position: top;
+      background-repeat: no-repeat;
+      filter: brightness(60%);
+      color: #080808;
+    }
+
+    .main {
+      position: relative;
+      min-height: calc(100% - 700px);
+      background: #2b2b2b;
+    }
+
+    .introContainer {
+      position: relative;
+      display: flex;
+      width: 100%;
+      padding: 50px 0px;
+    }
+
+    .introContainer:nth-child(3) {
+      justify-content: flex-end;
+    }
+
+    .introContainer:nth-child(3) > div {
+      margin-right: 50px;
+    }
+
+    .introContainer > div {
+      margin-left: 50px;
+    }
+
+    .introTitle > div:nth-child(1) {
+      display: inline-block;
+      font-size: 26px;
+    }
+
+    .introTitle > div:nth-child(2) {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 20px;
+    }
+
+    .introContent {
+      margin-top: 20px;
+    }
+
+    .designerContainer {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 50px 0px;
+    }
+
+    .banner {
+      height: 200px;
+      background-color: #2b2b2b;
+    }
+
+    .banner > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      height: 100px;
+      transform: translateY(-50%);
+      background: #585858;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .banner > div > div:first-child {
+      margin-right: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="headerBackground"></div>
+    <header class="header">
+      <div class="headerContainer">
+        <a class="headerLeftContainer"  href="./index.html">
+          <div class="headerLogo"></div>
+          <div>
+            <div class="headerTitle">鼎鋒設計</div>
+            <div class="headerSubtitle">DIN FONG DESIGN</div>
+          </div>
+        </a>
+        <div class="headerRightContainer">
+          <a href="aboutPage.html" class="headerLink">About</a>
+          <a class="headerLink">Projects</a>
+          <a class="headerLink">Service</a>
+          <a class="headerLink">News</a>
+          <a class="headerLink">Contacts</a>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="banner">
+        <div>
+          <div>Introduction</div>
+          <div>公司簡介</div>
+        </div>
+      </div>
+      <section class="introContainer">
+        <img height="450px" src="./img_sorces/pinterest/2.jpg">
+        <div>
+          <div class="introTitle">
+            <div>COMPANY PROFILE</div>
+            <div>關於鼎鋒</div>
+          </div>
+          <div class="introContent">
+            每一件作品，即使做到99.999%時，<br/>
+            我們仍會追求最後那0.001%的圓滿，<br/>
+            這樣，才算是真正的「完整」。<br/>
+            因此，以這樣的信念發想作為品牌命名，<br/>
+            同時，力求使用者心中理想的畫面。<br/>
+            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
+            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
+            而是由裡至外的全然體驗與真實感動。<br/>
+            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
+            通過心意和創意，化為顧客的滿意。<br/>
+          </div>
+        </div>
+      </section>
+      <section class="introContainer">
+        <div>
+          <div class="introTitle">
+            <div>DESIGN CONCEPT</div>
+            <div>圓橙理念</div>
+          </div>
+          <div class="introContent">
+            每一件作品，即使做到99.999%時，<br/>
+            我們仍會追求最後那0.001%的圓滿，<br/>
+            這樣，才算是真正的「完整」。<br/>
+            因此，以這樣的信念發想作為品牌命名，<br/>
+            同時，力求使用者心中理想的畫面。<br/>
+            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
+            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
+            而是由裡至外的全然體驗與真實感動。<br/>
+            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
+            通過心意和創意，化為顧客的滿意。<br/>
+          </div>
+        </div>
+        <img height="450px" src="./img_sorces/pinterest/6.jpg">
+      </section>
+      <div class="banner">
+        <div>
+          <div>Design Director</div>
+          <div>設計總監</div>
+        </div>
+      </div>
+      <section class="designerContainer">
+        <img height="450px" src="./img_sorces/designer2.jpg">
+        <div>
+          <div class="designerTitle">
+            <div>COMPANY PROFILE</div>
+            <div>關於鼎鋒</div>
+          </div>
+          <div class="designerContent">
+            每一件作品，即使做到99.999%時，<br/>
+            我們仍會追求最後那0.001%的圓滿，<br/>
+            這樣，才算是真正的「完整」。<br/>
+            因此，以這樣的信念發想作為品牌命名，<br/>
+            同時，力求使用者心中理想的畫面。<br/>
+            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
+            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
+            而是由裡至外的全然體驗與真實感動。<br/>
+            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
+            通過心意和創意，化為顧客的滿意。<br/>
+          </div>
+        </div>
+      </section>
+    </div>
+  </wreppaer>
+
+  <script>
+    //headerHoverEffect
+    function ChangeHeaderLinksOnHover() {
+      const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
+      const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+      headerNames.map((element, index) => {
+        $(`.headerLink:nth-child(${index+1})`).hover(() => {
+          $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
+        })
+        $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
+          $(`.headerLink:nth-child(${index+1})`).text(element)
+        })
+      });
+    }
+    ChangeHeaderLinksOnHover()
+    //headerSlideEfflect
+    $(window).scroll(() => {
+      const windowHeight = $(window).height()
+      const windowScrollTop = $(window).scrollTop()
+      if(windowScrollTop <= 10) {
+        $(".headerContainer").css("top", "0px")
+      } else {
+        $(".headerContainer").css("top", "-100px")
+      }
+    })
+    $(window).ready(() =>{
+      $(".headerContainer").css("top", "0px")
+    })
+    
+  </script>
+</body>
+</html>
