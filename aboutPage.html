@@ -26,7 +26,7 @@
 
     .headerBackground {
       width: 100%;
-      height: 700px;
+      height: 100%;
       background: url(./img_sorces/header2.jpg);
       background-attachment: fixed;
       background-position: top;
@@ -78,10 +78,34 @@
     .designerContainer {
       position: relative;
       display: flex;
-      justify-content: center;
-      width: 100%;
-      padding: 50px 0px;
+      padding: 50px 0px 50px 200px;
     }
+    
+    .designerContainer > div {
+      margin-left: 10px;
+      border: solid 1px gray;
+      padding: 50px;
+    }
+
+    .designerContainer > div > div {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .designerTitle > div:nth-child(1) {
+      margin-right: 20px;
+      font-size: 26px;
+    }
+
+    .designerTitle > div:nth-child(2) {
+      display: inline;
+      font-size: 20px;
+    }
+
+    .designerContent {
+      margin-top: 20px;
+    }
+
 
     .banner {
       height: 200px;
@@ -96,13 +120,25 @@
       top: 50%;
       height: 100px;
       transform: translateY(-50%);
-      background: #585858;
+      background: linear-gradient(
+        to left,
+        #2b2b2b,
+        #585858
+      );
       text-align: center;
       font-size: 20px;
     }
 
     .banner > div > div:first-child {
       margin-right: 20px;
+    }
+
+    .footer {
+      height: 50px;
+      background: #585858;
+      line-height: 50px;
+      text-align: center;
+      font-size: 12px;
     }
 
   </style>
@@ -187,24 +223,22 @@
         <img height="450px" src="./img_sorces/designer2.jpg">
         <div>
           <div class="designerTitle">
-            <div>COMPANY PROFILE</div>
-            <div>關於鼎鋒</div>
+            <div>Austin Lin</div>
+            <div>林建廷</div>
           </div>
           <div class="designerContent">
-            每一件作品，即使做到99.999%時，<br/>
-            我們仍會追求最後那0.001%的圓滿，<br/>
-            這樣，才算是真正的「完整」。<br/>
-            因此，以這樣的信念發想作為品牌命名，<br/>
-            同時，力求使用者心中理想的畫面。<br/>
-            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
-            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
-            而是由裡至外的全然體驗與真實感動。<br/>
-            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
-            通過心意和創意，化為顧客的滿意。<br/>
+            成功大學都市計畫學系<br/>
+            成功大學建築研究所碩士<br/>
+            漢堡開發專任設計師<br/>
+            建築師專任設計師<br/>
           </div>
         </div>
       </section>
     </div>
+    
+    <footer class="footer">
+      COPYRIGHT © DIN-FONG DESIGN ALL RIGHTS RESERVED. WEB DESIGN BY IAN.
+    </footer>
   </wreppaer>
 
   <script>
