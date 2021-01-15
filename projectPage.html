@@ -6,6 +6,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <title>鼎鋒作品</title>
   <link rel="stylesheet" href="./header.css">
+
   <style>
     html, body {
       font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
@@ -174,33 +175,6 @@
       </div>
     </header>
     <div class="main">
-      <section class="projectsContainer">
-        <a class="projectImg" href="./projectPage/層峰內斂.html">
-          <img src="./img_sorces/2017層峰內斂-古典奢華招待所/1.jpg">
-        </a>
-        <a class="projectContent" href="./projectPage/層峰內斂.html">
-          <div class="projectTitle">層峰內斂</div>
-          <div class="projectDate">2017</div>
-        </a>
-      </section>
-      <section class="projectsContainer">
-        <a class="projectImg" href="./projectPage/層峰內斂.html">
-          <img src="./img_sorces/2017層峰內斂-古典奢華招待所/1.jpg">
-        </a>
-        <a class="projectContent" href="./projectPage/層峰內斂.html">
-          <div class="projectTitle">層峰內斂</div>
-          <div class="projectDate">2017</div>
-        </a>
-      </section>
-      <section class="projectsContainer">
-        <a class="projectImg" href="./projectPage/層峰內斂.html">
-          <img src="./img_sorces/2017層峰內斂-古典奢華招待所/1.jpg">
-        </a>
-        <a class="projectContent" href="./projectPage/層峰內斂.html">
-          <div class="projectTitle">層峰內斂</div>
-          <div class="projectDate">2017</div>
-        </a>
-      </section>
     </div>
     
     <footer class="footer">
@@ -236,7 +210,40 @@
     $(window).ready(() =>{
       $(".headerContainer").css("top", "0px")
     })
-    
+    //projects info
+    const projectsInfo = [
+      {
+        name: "層峰內斂",
+        src: "./img_sorces/2017層峰內斂-古典奢華招待所/1.jpg",
+        href: "./projectPage/層峰內斂.html",
+        year: "2017"
+      },
+      {
+        name: "奢華系列",
+        src: "./img_sorces/2017奢華系列/1.jpg",
+        href: "./projectPage/奢華系列.html",
+        year: "2017"
+      },
+      {
+        name: "優雅歐風",
+        src: "./img_sorces/2017優雅歐風系列寢居/1.jpg",
+        href: "./projectPage/優雅歐風.html",
+        year: "2017"
+      },
+    ]
+    for(let i = 0; i < projectsInfo.length; i++) {
+      $(".main").append(`
+      <section class="projectsContainer">
+        <a class="projectImg" href=${projectsInfo[i].href}>
+          <img src=${projectsInfo[i].src}>
+        </a>
+        <a class="projectContent" href="./projectPage/層峰內斂.html">
+          <div class="projectTitle">${projectsInfo[i].name}</div>
+          <div class="projectDate">${projectsInfo[i].year}</div>
+        </a>
+      </section>
+    `)
+    }
   </script>
 </body>
 </html>
