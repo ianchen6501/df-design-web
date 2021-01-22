@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="./header.js"></script>
   <title>鼎鋒作品</title>
   <link rel="stylesheet" href="./static/css/header.css">
 
@@ -156,24 +157,7 @@
 <body>
   <div class="wrapper">
     <div class="headerBackground"></div>
-    <header class="header">
-      <div class="headerContainer">
-        <a class="headerLeftContainer"  href="./index.html">
-          <div class="headerLogo"></div>
-          <div>
-            <div class="headerTitle">鼎鋒設計</div>
-            <div class="headerSubtitle">DIN FONG DESIGN</div>
-          </div>
-        </a>
-        <div class="headerRightContainer">
-          <a href="aboutPage.html" class="headerLink">About</a>
-          <a href="projectPage.html" class="headerLink">Projects</a>
-          <a class="headerLink">Service</a>
-          <a class="headerLink">News</a>
-          <a class="headerLink">Contacts</a>
-        </div>
-      </div>
-    </header>
+    <header class="header"></header>
     <div class="main">
     </div>
     
@@ -183,6 +167,13 @@
   </div>
 
   <script>
+    //init
+    $(window).ready(() =>{
+      //header init
+      const headerContainer = $(".header")
+      headerContainer.append(headerDOM)
+      $(".headerContainer").css("top", "0px")
+    })
     //headerHoverEffect
     function ChangeHeaderLinksOnHover() {
       const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
@@ -206,9 +197,6 @@
       } else {
         $(".headerContainer").css("top", "-100px")
       }
-    })
-    $(window).ready(() =>{
-      $(".headerContainer").css("top", "0px")
     })
     //projects info
     const projectsInfo = [
