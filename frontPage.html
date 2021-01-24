@@ -4,21 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <title>首頁</title>
-  <link rel="stylesheet" href="./static/css/header.css">
+  <script src="./js/header&footer.js"></script>
+  <title>鼎峰設計 | DIN FONG DESIGN</title>
+  <link rel="stylesheet" href="./static/css/header&footer.css">
+  <link rel="stylesheet" href="./static/css/public.css">
   <style>
-    html, body {
-      height: 100%;
-      font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
-      margin: 0px;
-      padding: 0px;
-      background: #1C1C1C;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
     .wrapper {
       position: relative;
       height: 100%;
@@ -216,22 +206,7 @@
         <img src="./static/img/index_backgroundImg/index_5.jpg"> 
       </div>
     </div>
-    <header class="header">
-      <a class="headerLeftContainer" href="/index.html">
-        <div class="headerLogo"></div>
-        <div>
-          <div class="headerTitle">鼎鋒設計</div>
-          <div class="headerSubtitle">DIN FONG DESIGN</div>
-        </div>
-      </a>
-      <div class="headerRightContainer">
-        <a href="aboutPage.html" class="headerLink">About</a>
-        <a href="projectPage.html" class="headerLink">Projects</a>
-        <a class="headerLink">Service</a>
-        <a class="headerLink">News</a>
-        <a class="headerLink">Contacts</a>
-      </div>
-    </header>
+    <header class="header"></header>
     <main class="main">
         <a class="container" href="./aboutPage.html">
           <div class="mainBorder"></div>
@@ -244,21 +219,50 @@
   </div>
 
   <script>
-    //headerHoverEffect
-    function ChangeHeaderLinksOnHover() {
-      const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
-      const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
-      headerNames.map((element, index) => {
-        $(`.headerLink:nth-child(${index+1})`).hover(() => {
-          $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
-        })
-        $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
-          $(`.headerLink:nth-child(${index+1})`).text(element)
-        })
-      });
-    }
-    ChangeHeaderLinksOnHover()
-    
+    //init
+    $(window).ready(() =>{
+      //header init
+      const headerContainer = $(".header")
+      headerContainer.append(headerDOM)
+      $(".headerContainer").css("top", "0px")
+
+      //headerHoverEffect
+      function ChangeHeaderLinksOnHover() {
+        const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
+        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+        headerNames.map((element, index) => {
+          $(`.headerLink:nth-child(${index+1})`).hover(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
+          })
+          $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(element)
+          })
+        });
+      }
+      ChangeHeaderLinksOnHover()
+
+      //headerSlideEfflect
+      $(window).scroll(() => {
+        const windowHeight = $(window).height()
+        const windowScrollTop = $(window).scrollTop()
+        if(windowScrollTop <= 10) {
+          $(".headerContainer").css("top", "0px")
+        } else {
+          $(".headerContainer").css("top", "-100px")
+        }
+      })
+      //TODO: rwd
+      //popUpHeader init
+      let isPopUp = false
+      $(".sidebarButton").on("click", () => {
+        isPopUp = !isPopUp
+        if(isPopUp) {
+          $("#headerContainer").removeClass("headerContainer").addClass("popUpHeaderContainer")
+        } else {
+          $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
+        }
+      })
+    })
   </script>
 </body>
 </html>
