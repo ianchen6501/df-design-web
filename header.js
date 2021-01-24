@@ -12,7 +12,7 @@ const headerDOM = `
       <a href="projectPage.html" class="headerLink">Projects</a>
       <a class="headerLink">Service</a>
       <a class="headerLink">News</a>
-      <a class="headerLink">Contacts</a>
+      <a href="contactsPage.html" class="headerLink">Contacts</a>
     </div>
   </div>
 `

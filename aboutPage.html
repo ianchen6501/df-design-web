@@ -26,12 +26,14 @@
     }
 
     .headerBackground {
+      position: relative;
       width: 100%;
       height: 100%;
-      background: url(./static/img/header2.jpg);
+      background: url(./static/img/header_backgroundImg/header1.jpg);
       background-attachment: fixed;
       background-position: top;
       background-repeat: no-repeat;
+      background-size: cover;
       filter: brightness(60%);
       color: #080808;
     }
@@ -105,6 +107,7 @@
 
     .designerContent {
       margin-top: 20px;
+      white-space: pre-line;
     }
 
 
@@ -142,13 +145,61 @@
       font-size: 12px;
     }
 
+    .svgContainer {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .svg {
+      width: 500px;
+      height: 250px;
+    }
+
+    .animation {
+      stroke-dasharray: 680;
+      stroke-dashoffset: -680;
+      animation: move 6s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes move {
+      0% {
+        stroke-dashoffset: -680;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .svgText {
+      position: absolute;
+      display: inline-block;
+      font-size: 26px;
+      font-weight: 900;
+    }
+
   </style>
 </head>
 <body>
   <div class="wrapper">
     <div class="headerBackground"></div>
-    <header class="header">
-    </header>
+    <header class="header"></header>
+    <section class="svgContainer">
+      <svg class="svg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="255.118px" height="141.732px" viewBox="0 0 255.118 141.732" enable-background="new 0 0 255.118 141.732"
+        xml:space="preserve">
+        <rect class="animation" stroke-width="1" x="14.173" y="14.172" fill="none" stroke="#ffffff" stroke-miterlimit="10" width="226.772" height="113.387"/>
+        <rect stroke-width="0.5" x="14.173" y="14.172" fill="none" stroke="#ffffff" stroke-miterlimit="10" width="226.772" height="113.387"/>
+      </svg>
+      <div class="svgText">關於鼎峰</div>
+    </section>
     <div class="main">
       <div class="banner">
         <div>
@@ -157,27 +208,27 @@
         </div>
       </div>
       <section class="introContainer">
-        <img height="450px" src="./static/img/pinterest/2.jpg">
+        <img height="450px" src="./static/img/aboutImg.jpg">
         <div>
           <div class="introTitle">
             <div>COMPANY PROFILE</div>
-            <div>關於鼎鋒</div>
+            <div>關於鼎鋒 X 鼎峰理念</div>
           </div>
           <div class="introContent">
-            每一件作品，即使做到99.999%時，<br/>
-            我們仍會追求最後那0.001%的圓滿，<br/>
-            這樣，才算是真正的「完整」。<br/>
-            因此，以這樣的信念發想作為品牌命名，<br/>
-            同時，力求使用者心中理想的畫面。<br/>
-            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
-            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
-            而是由裡至外的全然體驗與真實感動。<br/>
-            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
-            通過心意和創意，化為顧客的滿意。<br/>
+            鼎鋒團隊<br>
+            傳承大匠座的追求與精神 如鼎堅實 如鋒精準<br>
+            近三十年歲月裡<br>
+            各式空間規劃設計 傢俱及傢飾配置的淬鍊<br>
+            每一次耐心體貼的設計對話<br>
+            每一個嚴格把關的工程實作<br>
+            讓我們攜手許多顧客<br>
+            完成心中對於空間的想像<br>
+            並在時代不斷推進的同時<br>
+            與時俱進 帶給顧客更多元的體驗與真實感動<br>        
           </div>
         </div>
       </section>
-      <section class="introContainer">
+      <!-- <section class="introContainer">
         <div>
           <div class="introTitle">
             <div>DESIGN CONCEPT</div>
@@ -197,28 +248,30 @@
           </div>
         </div>
         <img height="450px" src="./static/img/pinterest/6.jpg">
-      </section>
+      </section> -->
       <div class="banner">
         <div>
-          <div>Design Director</div>
-          <div>設計總監</div>
+          <div>Our Team</div>
+          <div>團隊組成</div>
         </div>
       </div>
-      <section class="designerContainer">
-        <img height="450px" src="./static/img/designer2.jpg">
-        <div>
-          <div class="designerTitle">
-            <div>Austin Lin</div>
-            <div>林建廷</div>
+      <div class="designersContainer">
+        <!-- <section class="designerContainer">
+          <img height="450px" width="200px">
+          <div>
+            <div class="designerTitle">
+              <div>創辦人</div>
+              <div>林鈺洲 Peak</div>
+            </div>
+            <div class="designerContent">
+              代表作品<br>
+              桃園 永安豪景 五層別墅      曾宅 (325坪)<br>
+              楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)<br>
+              中壢 海華大地               趙宅 (125坪)<br>
+            </div>
           </div>
-          <div class="designerContent">
-            成功大學都市計畫學系<br/>
-            成功大學建築研究所碩士<br/>
-            漢堡開發專任設計師<br/>
-            建築師專任設計師<br/>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div> -->
     </div>
     
     <footer class="footer">
@@ -233,30 +286,107 @@
       const headerContainer = $(".header")
       headerContainer.append(headerDOM)
       $(".headerContainer").css("top", "0px")
-    })
-    //headerHoverEffect
-    function ChangeHeaderLinksOnHover() {
-      const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
-      const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
-      headerNames.map((element, index) => {
-        $(`.headerLink:nth-child(${index+1})`).hover(() => {
-          $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
-        })
-        $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
-          $(`.headerLink:nth-child(${index+1})`).text(element)
-        })
-      });
-    }
-    ChangeHeaderLinksOnHover()
-    //headerSlideEfflect
-    $(window).scroll(() => {
-      const windowHeight = $(window).height()
-      const windowScrollTop = $(window).scrollTop()
-      if(windowScrollTop <= 10) {
-        $(".headerContainer").css("top", "0px")
-      } else {
-        $(".headerContainer").css("top", "-100px")
+
+      //headerHoverEffect
+      function ChangeHeaderLinksOnHover() {
+        const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
+        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+        headerNames.map((element, index) => {
+          $(`.headerLink:nth-child(${index+1})`).hover(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
+          })
+          $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(element)
+          })
+        });
       }
+      ChangeHeaderLinksOnHover()
+
+      //headerSlideEfflect
+      $(window).scroll(() => {
+        const windowHeight = $(window).height()
+        const windowScrollTop = $(window).scrollTop()
+        if(windowScrollTop <= 10) {
+          $(".headerContainer").css("top", "0px")
+        } else {
+          $(".headerContainer").css("top", "-100px")
+        }
+      })
+
+      //desinerInit
+      const desinerInfo = [
+        {
+          title: "創辦人",
+          name: "林鈺洲",
+          englishName: "Peak",
+          projects: `
+          代表作品
+          桃園 永安豪景 五層別墅      曾宅 (325坪)
+          楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)
+          中壢 海華大地               趙宅 (125坪)
+          `
+        },
+        {
+          title: "創辦人",
+          name: "陳惠玲",
+          englishName: "Feeling",
+          projects: `
+          代表作品
+          桃園 藝術年鑑          林宅 (97坪)
+          桃園 永安尊爵 五層別墅 李宅(125坪)
+          桃園 菓林自建住宅      楊宅 (100坪)
+          `
+        },
+        {
+          title: "設計師",
+          name: "林建廷",
+          englishName: "Austin",
+          introduction: `
+          國立成功大學建築研究所 建築碩士
+          國立成功大學           工學學士
+          建築物室內裝修工程管理 乙級技術士
+          漢寶開發建設           專案管理
+          漢牧建築師事務所       臺北舊空總園區建築室內空間活化 專案管理
+          WSET Intermediate : Level 2 Award in Wines
+          `,
+          projects: `
+          代表作品
+          桃園 中悅麗舍花園     柯宅 (150坪)
+          桃園 中悅御之苑       張宅 (125坪)
+          桃園 國泰國家都會     曾宅 (35坪)
+          `
+        },
+        {
+          title: "設計師",
+          name: "林莉珍",
+          englishName: "Shelly",
+          introduction: `
+          建築物室內設計         乙級技術士
+          建築物室內裝修工程管理 乙級技術士
+          `,
+          projects: `
+          代表作品
+          桃園 中悅中央公園 曾宅(98坪) 
+          桃園 弘濟皇璽     江宅(50坪)
+          龍潭 扶輪社公益幸福基金會 牙科診間
+          `
+        },
+      ]
+      desinerInfo.map(data => {
+        $(".designersContainer").append(`
+          <section class="designerContainer">
+            <img height="450px" width="200px">
+            <div>
+              <div class="designerTitle">
+                <div>${data.title}</div>
+                <div>${data.name} ${data.englishName}</div>
+              </div>
+              <div class="designerContent">${data.projects}</div>
+              <div class="designerContent">${data.introduction ? data.introduction : ""}</div>
+            </div>
+          </section>
+        `)
+      })
     })
   </script>
 </body>

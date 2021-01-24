@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="./header.js"></script>
-  <title>鼎鋒作品</title>
+  <title>關於鼎鋒</title>
   <link rel="stylesheet" href="./static/css/header.css">
-
   <style>
     html, body {
       font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
@@ -27,9 +26,10 @@
     }
 
     .headerBackground {
+      position: relative;
       width: 100%;
       height: 100%;
-      background: url(./static/img/header_backgroundImg/header2.jpg);
+      background: url(./static/img/header_backgroundImg/header1.jpg);
       background-attachment: fixed;
       background-position: top;
       background-repeat: no-repeat;
@@ -42,107 +42,6 @@
       position: relative;
       min-height: calc(100% - 700px);
       background: #2b2b2b;
-    }
-
-    .projectsContainer {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      width: 100%;;
-      padding: 100px 0px;
-      transition: background 0.5s;
-    }
-
-    .projectsContainer:hover {
-      background: #4d4d4d;
-    }
-
-    .projectImg {
-      display: inline-block;
-      width: 600px;
-      height: 480px;
-      filter: brightness(50%);
-      box-shadow: 1px 1px 5px black;
-      overflow: hidden;
-      transition: filter 1s;
-      cursor: pointer;
-    }
-
-    .projectImg:hover {
-      filter: brightness(80%);
-      background-size: cover;
-    }
-
-    .projectImg:hover > img {
-      transform: scale(1.1);
-    }
-
-    .projectImg > img {
-      width: 100%;
-      height: 100%;
-      transition: transform 1s;
-    }
-
-
-    .projectContent {
-      position: relative;
-      align-self: flex-end;
-      height: fit-content;
-      margin-left: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      cursor: pointer;
-    }
-
-    .projectTitle {
-      writing-mode: vertical-lr;
-      font-size: 26px;
-      color: white;
-    }
-
-    
-    .projectTitle::after {
-      content: "";
-      display: inline-block;
-      position: relative;
-      margin-top: 10px;
-      background-color: white;
-      width: 34px;
-      height: 2px;
-    }
-
-    .projectDate {
-      margin-top: 10px;
-      text-align: center;
-      font-size: 12px;
-      color: white;
-    }
-
-    .banner {
-      height: 200px;
-      background-color: #2b2b2b;
-    }
-
-    .banner > div {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: 50%;
-      height: 100px;
-      transform: translateY(-50%);
-      background: linear-gradient(
-        to left,
-        #2b2b2b,
-        #585858
-      );
-      text-align: center;
-      font-size: 20px;
-    }
-
-    .banner > div > div:first-child {
-      margin-right: 20px;
     }
 
     .footer {
@@ -206,13 +105,14 @@
         <rect class="animation" stroke-width="1" x="14.173" y="14.172" fill="none" stroke="#ffffff" stroke-miterlimit="10" width="226.772" height="113.387"/>
         <rect stroke-width="0.5" x="14.173" y="14.172" fill="none" stroke="#ffffff" stroke-miterlimit="10" width="226.772" height="113.387"/>
       </svg>
-      <div class="svgText">鼎峰作品</div>
+      <div class="svgText">關於鼎峰</div>
     </section>
     <div class="main"></div>
+    <!-- TODO: footer 改外部引入-->
     <footer class="footer">
       COPYRIGHT © DIN-FONG DESIGN ALL RIGHTS RESERVED. WEB DESIGN BY IAN.
     </footer>
-  </div>
+  </wreppaer>
 
   <script>
     //init
@@ -248,43 +148,80 @@
         }
       })
 
-      //projects init
-      function projectsInit() {
-        const projectsInfo = [
-          {
-            name: "層峰內斂",
-            src: "./static/img/2017層峰內斂-古典奢華招待所/1.jpg",
-            href: "./projectPage/層峰內斂.html",
-            year: "2017"
-          },
-          {
-            name: "奢華系列",
-            src: "./static/img/2017奢華系列/1.jpg",
-            href: "./projectPage/奢華系列.html",
-            year: "2017"
-          },
-          {
-            name: "優雅歐風",
-            src: "./static/img/2017優雅歐風系列寢居/1.jpg",
-            href: "./projectPage/優雅歐風.html",
-            year: "2017"
-          },
-        ]
-        for(let i = 0; i < projectsInfo.length; i++) {
-          $(".main").append(`
-          <section class="projectsContainer">
-            <a class="projectImg" href=${projectsInfo[i].href}>
-              <img src=${projectsInfo[i].src}>
-            </a>
-            <a class="projectContent" href="./projectPage/層峰內斂.html">
-              <div class="projectTitle">${projectsInfo[i].name}</div>
-              <div class="projectDate">${projectsInfo[i].year}</div>
-            </a>
+      //desinerInit
+      const desinerInfo = [
+        {
+          title: "創辦人",
+          name: "林鈺洲",
+          englishName: "Peak",
+          projects: `
+          代表作品
+          桃園 永安豪景 五層別墅      曾宅 (325坪)
+          楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)
+          中壢 海華大地               趙宅 (125坪)
+          `
+        },
+        {
+          title: "創辦人",
+          name: "陳惠玲",
+          englishName: "Feeling",
+          projects: `
+          代表作品
+          桃園 藝術年鑑          林宅 (97坪)
+          桃園 永安尊爵 五層別墅 李宅(125坪)
+          桃園 菓林自建住宅      楊宅 (100坪)
+          `
+        },
+        {
+          title: "設計師",
+          name: "林建廷",
+          englishName: "Austin",
+          introduction: `
+          國立成功大學建築研究所 建築碩士
+          國立成功大學           工學學士
+          建築物室內裝修工程管理 乙級技術士
+          漢寶開發建設           專案管理
+          漢牧建築師事務所       臺北舊空總園區建築室內空間活化 專案管理
+          WSET Intermediate : Level 2 Award in Wines
+          `,
+          projects: `
+          代表作品
+          桃園 中悅麗舍花園     柯宅 (150坪)
+          桃園 中悅御之苑       張宅 (125坪)
+          桃園 國泰國家都會     曾宅 (35坪)
+          `
+        },
+        {
+          title: "設計師",
+          name: "林莉珍",
+          englishName: "Shelly",
+          introduction: `
+          建築物室內設計         乙級技術士
+          建築物室內裝修工程管理 乙級技術士
+          `,
+          projects: `
+          代表作品
+          桃園 中悅中央公園 曾宅(98坪) 
+          桃園 弘濟皇璽     江宅(50坪)
+          龍潭 扶輪社公益幸福基金會 牙科診間
+          `
+        },
+      ]
+      desinerInfo.map(data => {
+        $(".designersContainer").append(`
+          <section class="designerContainer">
+            <img height="450px" width="200px">
+            <div>
+              <div class="designerTitle">
+                <div>${data.title}</div>
+                <div>${data.name} ${data.englishName}</div>
+              </div>
+              <div class="designerContent">${data.projects}</div>
+              <div class="designerContent">${data.introduction ? data.introduction : ""}</div>
+            </div>
           </section>
         `)
-        }
-      }
-      projectsInit()
+      })
     })
   </script>
 </body>

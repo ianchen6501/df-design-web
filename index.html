@@ -28,6 +28,7 @@
       position: absolute;
       height: 100%;
       width: 100%;
+      overflow: hidden;
     }
 
     .backgroundImgSlide div {
@@ -35,28 +36,42 @@
       height: 100%;
       width: 100%;
       opacity: 0;
-      animation: slide 20s linear infinite;
+      animation: slide 25s linear infinite;
     }
 
     .backgroundImgSlide div img {
+      width: 100%;
       height: 100%;
       min-height: 100%;
       object-fit: cover;
-      overflow: hidden;
       filter: grayscale(50%) contrast(120%) brightness(60%);
+      transform: scale(1.2);
     }
 
     @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+
       5% {
         opacity: 1;
+        transform: scale(1.2);
+      }
+
+      10% {
+        opacity: 1;
+        transform: scale(1.14);
+      }
+
+      15% {
+        opacity: 1;
+        transform: scale(1.08);
       }
 
       25% {
-        opacity: 1;
-      }
-
-      30% {
         opacity: 0;
+        transform: scale(1);
       }
     }
 
@@ -76,6 +91,10 @@
       animation-delay: 15s;
     }
 
+    .backgroundImgSlide div:nth-child(5) {
+      animation-delay: 20s;
+    }
+
     /* .headerBackground {
       position: fixed;
       width: 100%;
@@ -88,13 +107,36 @@
     } */
 
     .main {
-      position: relative;
       height: 100%;
+    }
+
+    .container {
+      position: relative;
+      width: fit-content;
       top: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0 auto;
       transform: translateY(-50%);
+      transition: 1s background-color;
+      cursor: pointer;
+    }
+
+    .container:hover {
+      animation: shine 3s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-color: transparent;
+      }
+      50% {
+        background-color: rgba(255,255,255,0.2);
+      }
+      100% {
+        background-color: transparent;
+      }
     }
     
     .mainBorder {
@@ -103,7 +145,7 @@
       height: 200px;
       background: transparent;
       border: 1px solid white;
-
+      transition: 1s border;
 
       animation: scale 1s linear 1;
       animation-fill-mode: forwards; 
@@ -111,16 +153,20 @@
 
     @keyframes scale {
       100% {
-        width: 600px;
+        width: 400px;
       }
+    }
+
+    .mainBorder:hover {
+      background-color: rgba(255, 255, 255 0.3);
     }
 
     .mainTitle {
       position: absolute;
-      border-bottom: solid 1px white;
       color:white;
       font-size: 20px;
       font-weight: 900;
+      text-align: center;
       opacity: 0;
 
       animation: transparency 1s linear 1;
@@ -134,8 +180,20 @@
       }
     }
 
-    
+    .mainTitle > h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 
+    .mainTitle > h3:last-child::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 0.5px;
+      background-color: white;
+      transform: translateY(-5px);
+    }
 
   </style>
 </head>
@@ -143,16 +201,19 @@
   <div class="wrapper">
     <div class="backgroundImgSlide">
       <div>
-        <img width="100%" src="./static/img/23845562_1937532722938709_2917512312950179374_o.jpg"> 
+        <img src="./static/img/index_backgroundImg/index_1.jpg"> 
       </div>
       <div>
-        <img width="100%" src="./static/img/23926219_1937518559606792_3228815453384812073_o.jpg"> 
+        <img src="./static/img/index_backgroundImg/index_2.jpg"> 
       </div>
       <div>
-        <img width="100%" src="./static/img/23926321_1937520036273311_8306554723569138497_o.jpg"> 
+        <img src="./static/img/index_backgroundImg/index_3.jpg"> 
       </div>
       <div>
-        <img width="100%" src="./static/img/24059407_1937534579605190_6196047170882468912_o.jpg"> 
+        <img src="./static/img/index_backgroundImg/index_4.jpg"> 
+      </div>
+      <div>
+        <img src="./static/img/index_backgroundImg/index_5.jpg"> 
       </div>
     </div>
     <header class="header">
@@ -172,8 +233,13 @@
       </div>
     </header>
     <main class="main">
-      <div class="mainBorder"></div>
-      <a class="mainTitle" href="./aboutPage.html">DIN FONG DESIGN</a>
+        <a class="container" href="./aboutPage.html">
+          <div class="mainBorder"></div>
+          <div class="mainTitle" ">
+            <h3>探索鼎鋒</h3>
+            <h3>DIN FONG DESIGN</h3>
+          </div>
+        </a>
     </main>
   </div>
 
