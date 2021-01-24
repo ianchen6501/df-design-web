@@ -1,6 +1,6 @@
 const headerDOM = `
   <div class="headerContainer" id="headerContainer">
-    <a class="headerLeftContainer"  href="frontPage.html">
+    <a class="headerLeftContainer"  href="index.html">
       <div class="headerLogo"></div>
       <div>
         <div class="headerTitle">鼎鋒設計</div>
