@@ -7,17 +7,17 @@ const headerDOM = `
         <div class="headerSubtitle">DIN FONG DESIGN</div>
       </div>
     </a>
-    <div class="headerRightContainer">
+    <div class="headerRightContainer" id="headerRightContainer">
       <a href="aboutPage.html" class="headerLink">About</a>
       <a href="projectPage.html" class="headerLink">Projects</a>
       <a class="headerLink">Service</a>
       <a class="headerLink">News</a>
       <a href="contactsPage.html" class="headerLink">Contacts</a>
-      <div class="sidebarButton">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    </div>
+    <div class="sidebarButton">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 

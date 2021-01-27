@@ -125,6 +125,54 @@
       margin-right: 20px;
     }
 
+    @media screen and (max-width: 780px) {
+      .introContainer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .introContainer > div {
+        margin-left: 0px;
+        padding: 0px;
+      }
+
+      .introTitle {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .introTitle > div:nth-child(1) {
+        font-size: 20px;
+      }
+
+      .introTitle > div:nth-child(2) {
+        margin-left: 0px;
+      }
+
+      .introContent {
+        padding: 0px 20px;
+        font-size: 16px;
+      }
+
+      .designerContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0px 50px 0px;
+      }
+
+      .designerContainer > div {
+        width: 80vw;
+        margin-left: 0px;
+        margin-top: 20px;
+        padding: 20px;
+      }
+
+      img {
+        width: 80vw;
+        height: fit-content;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -312,7 +360,7 @@
       desinerInfo.map(data => {
         $(".designersContainer").append(`
           <section class="designerContainer">
-            <img height="450px" width="200px">
+            <img height="450px" width="200px" src="./static/img/designer1.jpg">
             <div>
               <div class="designerTitle">
                 <div>${data.title}</div>
@@ -323,6 +371,20 @@
             </div>
           </section>
         `)
+      })
+
+      //popUpHeader init
+      let isPopUp = false
+      $(".sidebarButton").on("click", () => {
+        isPopUp = !isPopUp
+        if(isPopUp) {
+          // $("#headerContainer").css("top: 0px")
+          $("#headerContainer").removeClass("headerContainer").addClass("popUpHeaderContainer")
+          $("#headerRightContainer").removeClass("headerRightContainer").addClass("popUpHeaderRightContainer")
+        } else {
+          $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
+          $("#headerRightContainer").removeClass("popUpHeaderRightContainer").addClass("headerRightContainer")
+        }
       })
 
       //footer init

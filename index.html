@@ -131,6 +131,9 @@
     
     .mainBorder {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 200px;
       height: 200px;
       background: transparent;
@@ -152,7 +155,7 @@
     }
 
     .mainTitle {
-      position: absolute;
+      position: relative;
       color:white;
       font-size: 20px;
       font-weight: 900;
@@ -185,6 +188,20 @@
       transform: translateY(-5px);
     }
 
+    @media screen and (max-width: 780px) {
+      .mainBorder {
+        width: fit-content;
+        height: 120px;
+        padding: 0px 20px;
+        animation: none;
+      }
+
+      .mainTitle > h3 {
+        font-size: 20px;
+      }
+
+    }
+
   </style>
 </head>
 <body>
@@ -209,10 +226,11 @@
     <header class="header"></header>
     <main class="main">
         <a class="container" href="./aboutPage.html">
-          <div class="mainBorder"></div>
-          <div class="mainTitle" ">
-            <h3>探索鼎鋒</h3>
-            <h3>DIN FONG DESIGN</h3>
+          <div class="mainBorder">
+            <div class="mainTitle" ">
+              <h3>探索鼎鋒</h3>
+              <h3>DIN FONG DESIGN</h3>
+            </div>
           </div>
         </a>
     </main>
@@ -251,15 +269,16 @@
           $(".headerContainer").css("top", "-100px")
         }
       })
-      //TODO: rwd
       //popUpHeader init
       let isPopUp = false
       $(".sidebarButton").on("click", () => {
         isPopUp = !isPopUp
         if(isPopUp) {
           $("#headerContainer").removeClass("headerContainer").addClass("popUpHeaderContainer")
+          $("#headerRightContainer").removeClass("headerRightContainer").addClass("popUpHeaderRightContainer")
         } else {
           $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
+          $("#headerRightContainer").removeClass("popUpHeaderRightContainer").addClass("headerRightContainer")
         }
       })
     })
