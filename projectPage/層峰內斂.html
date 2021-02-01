@@ -5,129 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <title>鼎鋒作品</title>
-  <style>
-    html{
-      font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
-      height: 100vh;
-      margin: 0px;
-      padding: 0px;
-      background: #797979;
-      color: white;
-    }
-
-    div, nav, section, footer {
-      box-sizing: border-box;
-    }
-
-    .wrapper {
-      height: calc(100vh - 60px);
-      width: 20%;
-      margin: 30px auto;
-      border: solid 1px white;
-
-      animation: open 1s linear 1;
-      animation-fill-mode: forwards; 
-    }
-
-    @keyframes open {
-      100% {
-        width: 80%;
-      }
-    }
-
-    .wrapper:hover {
-      width: 0;
-    }
-
-    nav {
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    section {
-      position: relative;
-      display: flex;
-      justify-content: space-around;
-      height: calc(100% - 100px);
-    }
-
-    button {
-      position: absolute;
-      justify-self: start;
-      height: 30px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      border: none;
-      background: transparent;
-      color: white;
-      font-size: 20px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    button:nth-child(1) {
-      left: 0px;
-    }
-
-    button:nth-child(3) {
-      right: 0px;
-    }
-
-    button:hover {
-      font-size: 22px;
-    }
-
-    button:focus {
-      outline: none;
-    }
-
-    .img {
-      width: 90%;
-      object-fit: contain;
-      opacity: 0;
-
-      animation: appear 0.5s ease-in-out 1s 1;
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes appear {
-      100%{
-        opacity: 100;
-      }
-    }
-
-    footer {
-      position: relative;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-    }
-
-    .backDirector {
-      position: absolute;
-      display: inline-block;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      width: 10px;
-      height: 10px;
-      border: solid 5px white;
-      background-color: transparent;
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="../static/css/public.css">
+  <link rel="stylesheet" href="../static/css/projectPage.css">
 </head>
 <body>
   <div class="wrapper">
     <nav>層 峰 內 斂</nav>
     <section>
       <button id="backward">&pr;</button>
-      <img class="img" src="../img_sorces/2017層峰內斂-古典奢華招待所/1.jpg">
+      <img class="img">
       <button id="forward">&sc;</button>
     </section>
     <footer>
