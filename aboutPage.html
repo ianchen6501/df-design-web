@@ -36,7 +36,12 @@
       position: relative;
       display: flex;
       width: 100%;
-      padding: 50px 0px;
+      background-color: rgb(141, 141, 141);
+    }
+
+    .introImg {
+      opacity: 0%;
+      transition: 1s opacity;
     }
 
     .introContainer:nth-child(3) {
@@ -51,6 +56,15 @@
       margin-left: 50px;
     }
 
+    .introTitle {
+      position: relative;
+      display: inline-block;
+      left: 100vw;
+      margin-top: 50px;
+      border-bottom: solid 0.5px white;
+      transition: 1s left;
+    }
+
     .introTitle > div:nth-child(1) {
       display: inline-block;
       font-size: 26px;
@@ -59,11 +73,15 @@
     .introTitle > div:nth-child(2) {
       display: inline-block;
       margin-left: 20px;
-      font-size: 20px;
+      font-size: 16px;
     }
 
     .introContent {
-      margin-top: 20px;
+      opacity: 0%;
+      padding-top: 20px;
+      color: rgb(233, 233, 233);
+      line-height: 26px;
+      transition: 1s opacity;
     }
 
     .designerContainer {
@@ -71,16 +89,31 @@
       display: flex;
       padding: 50px 0px 50px 200px;
     }
+
+    .designerContainer > img {
+      opacity: 0%;
+      transition: 1s opacity;
+    }
     
     .designerContainer > div {
+      position: relative;;
+      width: 100%;
       margin-left: 10px;
       border: solid 1px gray;
       padding: 50px;
+      background-color: rgb(141, 141, 141);
     }
 
-    .designerContainer > div > div {
-      display: flex;
-      align-items: baseline;
+    .designerTitle {
+      position: relative;
+      display: inline-block;
+      border-bottom: solid 0.5px white;
+      left: 100vw;
+      transition: 1s left;
+    }
+
+    .designerTitle > div {
+      display: inline-block;
     }
 
     .designerTitle > div:nth-child(1) {
@@ -90,12 +123,16 @@
 
     .designerTitle > div:nth-child(2) {
       display: inline;
-      font-size: 20px;
+      font-size: 16px;
     }
 
     .designerContent {
       margin-top: 20px;
       white-space: pre-line;
+      color: rgb(233, 233, 233);
+      line-height: 26px;
+      opacity: 0%;
+      transition: 1s opacity;
     }
 
 
@@ -106,26 +143,48 @@
 
     .banner > div {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
       top: 50%;
-      height: 100px;
-      transform: translateY(-50%);
-      background: linear-gradient(
+      left: 50%;
+      border-top: solid 1px white;
+      border-bottom: solid 1px white;
+      padding: 8px 5px;
+      transform: translate(-50%, -50%);
+      /* background: linear-gradient(
         to left,
         #2b2b2b,
         #585858
-      );
+      ); */
+      background: #2b2b2b;
       text-align: center;
       font-size: 20px;
+      transition: 1s opacity;
+      opacity: 0%;
     }
 
-    .banner > div > div:first-child {
-      margin-right: 20px;
+    .banner > div > div {
+      white-space: pre;
+    }
+
+    .moveLeft {
+      left: 0px;
+    }
+
+    .appear {
+      opacity: 100% !important;
     }
 
     @media screen and (max-width: 780px) {
+      .banner > div, 
+      .introContainer > img, 
+      .introContent,
+      .designerContainer > img,
+      .designerContent
+      {
+        opacity: 100%;
+        transition: none;
+      }
+
       .introContainer {
         flex-direction: column;
         align-items: center;
@@ -139,6 +198,9 @@
       .introTitle {
         margin-top: 20px;
         text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: none;
       }
 
       .introTitle > div:nth-child(1) {
@@ -150,7 +212,7 @@
       }
 
       .introContent {
-        padding: 0px 20px;
+        padding: 20px 20px;
         font-size: 16px;
       }
 
@@ -167,8 +229,12 @@
         padding: 20px;
       }
 
+      .designerTitle {
+        left: 0px;
+      }
+
       img {
-        width: 80vw;
+        width: 100vw;
         height: fit-content;
       }
     }
@@ -191,16 +257,15 @@
     <div class="main">
       <div class="banner">
         <div>
-          <div>Introduction</div>
-          <div>公司簡介</div>
+          <div>Introduction  公司簡介</div>
         </div>
       </div>
       <section class="introContainer">
-        <img height="450px" src="./static/img/aboutImg.jpg">
+        <img class="introImg" height="450px" src="./static/img/aboutImg.jpg">
         <div>
           <div class="introTitle">
             <div>COMPANY PROFILE</div>
-            <div>關於鼎鋒 X 鼎峰理念</div>
+            <div>鼎峰理念</div>
           </div>
           <div class="introContent">
             鼎鋒團隊<br>
@@ -216,51 +281,13 @@
           </div>
         </div>
       </section>
-      <!-- <section class="introContainer">
-        <div>
-          <div class="introTitle">
-            <div>DESIGN CONCEPT</div>
-            <div>圓橙理念</div>
-          </div>
-          <div class="introContent">
-            每一件作品，即使做到99.999%時，<br/>
-            我們仍會追求最後那0.001%的圓滿，<br/>
-            這樣，才算是真正的「完整」。<br/>
-            因此，以這樣的信念發想作為品牌命名，<br/>
-            同時，力求使用者心中理想的畫面。<br/>
-            服務項目含括各式空間設計規劃、傢俱及傢飾配置等，<br/>
-            然而，我們想做的，從不僅僅是視覺上的展演，<br/>
-            而是由裡至外的全然體驗與真實感動。<br/>
-            以橫跨全球24個時區分秒競演的創新設計為目標，<br/>
-            通過心意和創意，化為顧客的滿意。<br/>
-          </div>
-        </div>
-        <img height="450px" src="./static/img/pinterest/6.jpg">
-      </section> -->
       <div class="banner">
         <div>
-          <div>Our Team</div>
-          <div>團隊組成</div>
+          <div>Our Team  團隊組成</div>
         </div>
       </div>
       <div class="designersContainer">
-        <!-- <section class="designerContainer">
-          <img height="450px" width="200px">
-          <div>
-            <div class="designerTitle">
-              <div>創辦人</div>
-              <div>林鈺洲 Peak</div>
-            </div>
-            <div class="designerContent">
-              代表作品<br>
-              桃園 永安豪景 五層別墅      曾宅 (325坪)<br>
-              楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)<br>
-              中壢 海華大地               趙宅 (125坪)<br>
-            </div>
-          </div>
-        </section>
-      </div> -->
-    </div>
+      </div>
     <!-- footer -->
   </div>
 
@@ -287,15 +314,52 @@
       }
       ChangeHeaderLinksOnHover()
 
-      //headerSlideEfflect
+      //scrollfflect
       $(window).scroll(() => {
         const windowHeight = $(window).height()
         const windowScrollTop = $(window).scrollTop()
+        //header
         if(windowScrollTop <= 10) {
           $(".headerContainer").css("top", "0px")
         } else {
           $(".headerContainer").css("top", "-100px")
         }
+        //introduction
+        console.log(windowScrollTop)
+        if(windowScrollTop >= 130 && windowScrollTop <= 1420) {
+          $(".banner:nth-child(1) > div").addClass("appear")
+        } else {
+          $(".banner:nth-child(1) > div").removeClass("appear")
+        }
+        if(windowScrollTop >= 400 && windowScrollTop <= 1420) {
+          $(".introTitle").addClass("moveLeft")
+          $(".introContent").addClass("appear")
+          $(".introImg").addClass("appear")
+        } else {
+          $(".introTitle").removeClass("moveLeft")
+          $(".introContent").removeClass("appear")
+          $(".introImg").removeClass("appear")
+        }
+        //designers
+        //TODO:
+        if(windowScrollTop >= 785 && windowScrollTop <= 3144) {
+          $(".banner:nth-child(3) > div").addClass("appear")
+        } else {
+          $(".banner:nth-child(3) > div").removeClass("appear")
+        }
+        for(let i=0; i<4; i++) {
+          if(windowScrollTop >= 1020+i*550 && windowScrollTop <= 1020+windowHeight+i*550) {
+            $(`.designerContainer:nth-child(${i+1}) > img`).addClass("appear")
+            $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).addClass("moveLeft")
+            $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).addClass("appear")
+          } else {
+            $(`.designerContainer:nth-child(${i+1}) > img`).removeClass("appear")
+            $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).removeClass("moveLeft")
+            $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).removeClass("appear")
+          }
+        }
+
+
       })
 
       //desinerInit
@@ -304,8 +368,7 @@
           title: "創辦人",
           name: "林鈺洲",
           englishName: "Peak",
-          projects: `
-          代表作品
+          projects: `代表作品
           桃園 永安豪景 五層別墅      曾宅 (325坪)
           楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)
           中壢 海華大地               趙宅 (125坪)
@@ -315,8 +378,7 @@
           title: "創辦人",
           name: "陳惠玲",
           englishName: "Feeling",
-          projects: `
-          代表作品
+          projects: `代表作品
           桃園 藝術年鑑          林宅 (97坪)
           桃園 永安尊爵 五層別墅 李宅(125坪)
           桃園 菓林自建住宅      楊宅 (100坪)
@@ -326,16 +388,14 @@
           title: "設計師",
           name: "林建廷",
           englishName: "Austin",
-          introduction: `
-          國立成功大學建築研究所 建築碩士
+          introduction: `國立成功大學建築研究所 建築碩士
           國立成功大學           工學學士
           建築物室內裝修工程管理 乙級技術士
           漢寶開發建設           專案管理
           漢牧建築師事務所       臺北舊空總園區建築室內空間活化 專案管理
           WSET Intermediate : Level 2 Award in Wines
           `,
-          projects: `
-          代表作品
+          projects: `代表作品
           桃園 中悅麗舍花園     柯宅 (150坪)
           桃園 中悅御之苑       張宅 (125坪)
           桃園 國泰國家都會     曾宅 (35坪)
@@ -345,12 +405,10 @@
           title: "設計師",
           name: "林莉珍",
           englishName: "Shelly",
-          introduction: `
-          建築物室內設計         乙級技術士
+          introduction: `建築物室內設計         乙級技術士
           建築物室內裝修工程管理 乙級技術士
           `,
-          projects: `
-          代表作品
+          projects: `代表作品
           桃園 中悅中央公園 曾宅(98坪) 
           桃園 弘濟皇璽     江宅(50坪)
           龍潭 扶輪社公益幸福基金會 牙科診間
@@ -360,7 +418,7 @@
       desinerInfo.map(data => {
         $(".designersContainer").append(`
           <section class="designerContainer">
-            <img height="450px" width="200px" src="./static/img/designer1.jpg">
+            <img class="designerImg" height="450px" src="./static/img/designer1.jpg">
             <div>
               <div class="designerTitle">
                 <div>${data.title}</div>

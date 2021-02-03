@@ -38,25 +38,25 @@
       width: 100%;;
       padding: 100px 0px;
       transition: background 0.5s;
-    }
-
-    .projectsContainer:hover {
       background: #4d4d4d;
     }
 
+    .projectsContainer > div {
+      position: relative;
+    }
+
     .projectImg {
+      position: relative;
       display: inline-block;
-      width: 600px;
+      width: 480px;
       height: 480px;
-      filter: brightness(50%);
-      box-shadow: 1px 1px 5px black;
       overflow: hidden;
       transition: filter 1s;
       cursor: pointer;
+      z-index: 1;
     }
 
     .projectImg:hover {
-      filter: brightness(80%);
       background-size: cover;
     }
 
@@ -67,10 +67,21 @@
     .projectImg > img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       transition: transform 1s;
       vertical-align: top;
     }
 
+    
+    .projectSquare {
+      position: absolute;
+      display: inline-block;
+      top: 50px;
+      left: 50px;
+      width: 500px;
+      height: 480px;
+      border: 0.5px solid white;
+    }
 
     .projectContent {
       position: relative;
@@ -145,7 +156,7 @@
         width: fit-content;
         height: fit-content;
       }
-      /* TODO: 調整 a 跟 img height */
+
       .projectImg > img {
         width: 80vw;
         height: auto;
@@ -175,6 +186,10 @@
       .projectDate {
         margin-left: 20px;
         margin-top: 0px;
+      }
+
+      .projectSquare {
+        display: none;
       }
     }
 
@@ -256,9 +271,12 @@
         for(let i = 0; i < projectsInfo.length; i++) {
           $(".main").append(`
           <section class="projectsContainer">
-            <a class="projectImg" href=${projectsInfo[i].href}>
-              <img src=${projectsInfo[i].src}>
-            </a>
+            <div>
+              <a class="projectImg" href=${projectsInfo[i].href}>
+                <img src=${projectsInfo[i].src}>
+              </a>
+              <div class="projectSquare"></div>
+            </div>
             <a class="projectContent" href="./projectPage/層峰內斂.html">
               <div class="projectTitle">${projectsInfo[i].name}</div>
               <div class="projectDate">${projectsInfo[i].year}</div>
