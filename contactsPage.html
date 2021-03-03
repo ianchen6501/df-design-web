@@ -166,6 +166,20 @@
         }
       })
 
+      //popUpHeader init
+      let isPopUp = false
+      $(".sidebarButton").on("click", () => {
+        isPopUp = !isPopUp
+        if(isPopUp) {
+          // $("#headerContainer").css("top: 0px")
+          $("#headerContainer").removeClass("headerContainer").addClass("popUpHeaderContainer")
+          $("#headerRightContainer").removeClass("headerRightContainer").addClass("popUpHeaderRightContainer")
+        } else {
+          $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
+          $("#headerRightContainer").removeClass("popUpHeaderRightContainer").addClass("headerRightContainer")
+        }
+      })
+
       //footer init
       const wrapper = $(".wrapper")
       wrapper.append(footerDOM)

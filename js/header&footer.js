@@ -10,8 +10,7 @@ const headerDOM = `
     <div class="headerRightContainer" id="headerRightContainer">
       <a href="aboutPage.html" class="headerLink">About</a>
       <a href="projectPage.html" class="headerLink">Projects</a>
-      <a class="headerLink">Service</a>
-      <a class="headerLink">News</a>
+      <a href="servicePage.html" class="headerLink">Service</a>
       <a href="contactsPage.html" class="headerLink">Contacts</a>
     </div>
     <div class="sidebarButton">
@@ -20,7 +19,6 @@ const headerDOM = `
       <div></div>
     </div>
   </div>
-
 `
 
 const footerDOM = `
