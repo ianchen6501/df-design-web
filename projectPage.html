@@ -223,7 +223,7 @@
       //headerHoverEffect
       function ChangeHeaderLinksOnHover() {
         const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
-        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "聯絡我們"]
         headerNames.map((element, index) => {
           $(`.headerLink:nth-child(${index+1})`).hover(() => {
             $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])

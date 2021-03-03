@@ -30,13 +30,14 @@
       position: relative;
       min-height: calc(100% - 700px);
       background: #2b2b2b;
+      overflow: hidden;
     }
 
     .introContainer {
       position: relative;
       display: flex;
+      justify-content: center;
       width: 100%;
-      background-color: rgb(141, 141, 141);
     }
 
     .introImg {
@@ -53,16 +54,18 @@
     }
 
     .introContainer > div {
-      margin-left: 50px;
+      margin-right: 10px;
+      padding: 30px 50px 30px 30px;
+      background-color: transparent;
+      transition: background-color 1s;
     }
 
     .introTitle {
       position: relative;
       display: inline-block;
-      left: 100vw;
-      margin-top: 50px;
+      right: 100vw;
       border-bottom: solid 0.5px white;
-      transition: 1s left;
+      transition: 1s right;
     }
 
     .introTitle > div:nth-child(1) {
@@ -82,6 +85,7 @@
       color: rgb(233, 233, 233);
       line-height: 26px;
       transition: 1s opacity;
+      transition-delay: 0.5s;
     }
 
     .designerContainer {
@@ -99,9 +103,9 @@
       position: relative;;
       width: 100%;
       margin-left: 10px;
-      border: solid 1px gray;
       padding: 50px;
-      background-color: rgb(141, 141, 141);
+      background-color: transparent;
+      transition: background-color 1s;
     }
 
     .designerTitle {
@@ -133,8 +137,8 @@
       line-height: 26px;
       opacity: 0%;
       transition: 1s opacity;
+      transition-delay: 0.5s;
     }
-
 
     .banner {
       height: 200px;
@@ -170,13 +174,57 @@
       left: 0px;
     }
 
+    .moveRight {
+      right: 0px;
+    }
+
     .appear {
       opacity: 100% !important;
+    }
+
+    .showBackgroundColor {
+      background-color: rgb(141, 141, 141) !important;
+    }
+
+    @media screen and (max-width: 1080px) {
+      .introContainer {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .introContainer > div {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 60%;
+      }
+
+      .introImg {
+        width: 60%;
+      }
+
+      .introTitle {
+        margin-top: 20px;
+        text-align: center;
+        /* left: 50%;
+        transform: translateX(-50%); */
+        transition: right 1s;
+      }
+
+      /* .introTitle > div:nth-child(1) {
+        font-size: 26px;
+      } */
+
+      /* .introContent {
+        padding: 20px 20px;
+        font-size: 16px;
+      } */
     }
 
     @media screen and (max-width: 780px) {
       .banner > div, 
       .introContainer > img, 
+      .introContainer > div,
+      .introTitle,
       .introContent,
       .designerContainer > img,
       .designerContent
@@ -185,22 +233,22 @@
         transition: none;
       }
 
-      .introContainer {
-        flex-direction: column;
-        align-items: center;
+      .introContainer > div {
+        width: 80%;
+        background-color: rgb(141, 141, 141);
       }
 
-      .introContainer > div {
-        margin-left: 0px;
-        padding: 0px;
+      .introImg {
+        width: 80%;
       }
 
       .introTitle {
-        margin-top: 20px;
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        right: 0vw;
+        font-size: 20px;
       }
 
       .introTitle > div:nth-child(1) {
@@ -209,11 +257,6 @@
 
       .introTitle > div:nth-child(2) {
         margin-left: 0px;
-      }
-
-      .introContent {
-        padding: 20px 20px;
-        font-size: 16px;
       }
 
       .designerContainer {
@@ -226,16 +269,12 @@
         width: 80vw;
         margin-left: 0px;
         margin-top: 20px;
+        border: solid 1px gray;
         padding: 20px;
       }
 
       .designerTitle {
         left: 0px;
-      }
-
-      img {
-        width: 100vw;
-        height: fit-content;
       }
     }
 
@@ -261,7 +300,6 @@
         </div>
       </div>
       <section class="introContainer">
-        <img class="introImg" height="450px" src="./static/img/aboutImg.jpg">
         <div>
           <div class="introTitle">
             <div>COMPANY PROFILE</div>
@@ -280,6 +318,7 @@
             與時俱進 帶給顧客更多元的體驗與真實感動<br>        
           </div>
         </div>
+        <img class="introImg" height="450px" src="./static/img/aboutImg.jpg">
       </section>
       <div class="banner">
         <div>
@@ -290,7 +329,6 @@
       </div>
     <!-- footer -->
   </div>
-
   <script>
     //init
     $(window).ready(() =>{
@@ -302,7 +340,7 @@
       //headerHoverEffect
       function ChangeHeaderLinksOnHover() {
         const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
-        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "聯絡我們"]
         headerNames.map((element, index) => {
           $(`.headerLink:nth-child(${index+1})`).hover(() => {
             $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
@@ -317,45 +355,53 @@
       //scrollfflect
       $(window).scroll(() => {
         const windowHeight = $(window).height()
+        const windowWidth = $(window).width()
         const windowScrollTop = $(window).scrollTop()
+        console.log(windowWidth)
         //header
         if(windowScrollTop <= 10) {
           $(".headerContainer").css("top", "0px")
         } else {
           $(".headerContainer").css("top", "-100px")
         }
+        //TODO:
         //introduction
-        console.log(windowScrollTop)
-        if(windowScrollTop >= 130 && windowScrollTop <= 1420) {
+        // while(windowWidth > 780) {
+        //   console.log("yoyo")
+        // }
+        if(windowScrollTop >= 200 && windowScrollTop <= 1200 && windowWidth >= 780) {
           $(".banner:nth-child(1) > div").addClass("appear")
         } else {
           $(".banner:nth-child(1) > div").removeClass("appear")
         }
-        if(windowScrollTop >= 400 && windowScrollTop <= 1420) {
-          $(".introTitle").addClass("moveLeft")
+        if(windowScrollTop >= 500 && windowScrollTop <= 1200 && windowWidth >= 780) {
+          $(".introTitle").addClass("moveRight")
           $(".introContent").addClass("appear")
           $(".introImg").addClass("appear")
+          $(".introContainer > div").addClass("showBackgroundColor")
         } else {
-          $(".introTitle").removeClass("moveLeft")
+          $(".introTitle").removeClass("moveRight")
           $(".introContent").removeClass("appear")
           $(".introImg").removeClass("appear")
+          $(".introContainer > div").removeClass("showBackgroundColor")
         }
         //designers
-        //TODO:
-        if(windowScrollTop >= 785 && windowScrollTop <= 3144) {
+        if(windowScrollTop >= 785 && windowScrollTop <= 3144 && windowWidth >= 780) {
           $(".banner:nth-child(3) > div").addClass("appear")
         } else {
           $(".banner:nth-child(3) > div").removeClass("appear")
         }
         for(let i=0; i<4; i++) {
-          if(windowScrollTop >= 1020+i*550 && windowScrollTop <= 1020+windowHeight+i*550) {
+          if(windowScrollTop >= 1020+i*550 && windowScrollTop <= 1020+windowHeight+i*550 && windowWidth >= 780) {
             $(`.designerContainer:nth-child(${i+1}) > img`).addClass("appear")
             $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).addClass("moveLeft")
             $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).addClass("appear")
+            $(`.designerContainer:nth-child(${i+1}) > div`).addClass("showBackgroundColor")
           } else {
             $(`.designerContainer:nth-child(${i+1}) > img`).removeClass("appear")
             $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).removeClass("moveLeft")
             $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).removeClass("appear")
+            $(`.designerContainer:nth-child(${i+1}) > div`).removeClass("showBackgroundColor")
           }
         }
 
@@ -418,7 +464,7 @@
       desinerInfo.map(data => {
         $(".designersContainer").append(`
           <section class="designerContainer">
-            <img class="designerImg" height="450px" src="./static/img/designer1.jpg">
+            <img class="designerImg" height="450px" src="./static/img/portrait/austin.jpg">
             <div>
               <div class="designerTitle">
                 <div>${data.title}</div>
