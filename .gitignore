@@ -9,6 +9,7 @@ key.js
 # testing
 /coverage
 /demo
+/styleFrame
 
 # production
 /build
