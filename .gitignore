@@ -15,9 +15,11 @@ schedules.txt
 gulpfile.js
 /src
 /dist
+/portrait
 
 # production
-build
+/build
+/express
 
 # misc
 .DS_Store
