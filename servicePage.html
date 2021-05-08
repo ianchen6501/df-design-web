@@ -8,6 +8,10 @@
   <title>鼎鋒服務</title>
   <link rel="stylesheet" href="./static/css/public.css">
   <link rel="stylesheet" href="./static/css/header&footer.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <style>
     .wrapper {
       height: 100%;
@@ -134,6 +138,10 @@
       height: 60px;
       background-color: #bdbdbd;
       z-index: 0;
+    }
+
+    .hidden {
+      visibility: hidden;
     }
 
     /* <!--TODO:--> */
@@ -284,12 +292,12 @@
         main.append(`
           <section class="serviceContainer">
             <div class="serviceBorder">
-              <img class="serviceImg" src="${serviceContents[i].img}"></img>
+              <img class="serviceImg hidden animate__animated" src="${serviceContents[i].img}"></img>
               <div class="serviceContent">
                 <div class="underColor"></div>
-                <h1>${serviceContents[i].title}</h1>
-                <article>${serviceContents[i].artical}</article>
-                <div class="serviceContentDownContainer">
+                <h1 class="title hidden animate__animated">${serviceContents[i].title}</h1>
+                <article class="hidden animate__animated">${serviceContents[i].artical}</article>
+                <div class="serviceContentDownContainer hidden animate__animated">
                   <h2>${serviceContents[i].englishTitle}</h2>
                   <h1>${serviceContents[i].number}</h1>
                 </div>
@@ -302,6 +310,44 @@
       // for(let i=0; i<serviceContents.length; i++) {
       //   $(`.serviceImg:nth-child(${i+1})`).css("background") = `url(${serviceContents[i].img})`
       // }
+
+      //serviceContent slide effect
+      $(window).ready().scroll(() =>{
+        const windowScrollTop = $(this).scrollTop()
+        for(let i=1; i<=serviceContents.length; i++) {
+          const content = $(`.serviceContainer:nth-child(${i})`)
+          const img = content.find("img")
+          const title = content.find(".title")
+          const article = content.find("article")
+          const englishTitle = content.find(".serviceContentDownContainer")
+          //img
+          if((Math.abs(windowScrollTop - img.offset().top)) < 500) {
+            img.removeClass("hidden").removeClass("animate__fadeOutLeftBig").addClass("animate__fadeInLeftBig")
+          }
+          if((Math.abs(windowScrollTop - img.offset().top)) > 500) {
+            img.removeClass("animate__fadeInLeftBig").addClass("animate__fadeOutLeftBig")
+          }
+          //title
+          if((Math.abs(windowScrollTop - img.offset().top)) < 500) {
+            title.removeClass("hidden").removeClass("animate__slideOutUp").addClass("animate__slideInDown")
+          }
+          if((Math.abs(windowScrollTop - img.offset().top)) > 500) {
+            title.removeClass("animate__slideInDown").addClass("animate__slideOutUp")
+          }
+          //article & englishTitle
+          if((Math.abs(windowScrollTop - img.offset().top)) < 500) {
+            article.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            englishTitle.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+          }
+          if((Math.abs(windowScrollTop - img.offset().top)) > 500) {
+            article.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            englishTitle.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+          }
+        }
+      })
+
+
+
       //footer init
       const wrapper = $(".wrapper")
       wrapper.append(footerDOM)
