@@ -144,7 +144,6 @@
       visibility: hidden;
     }
 
-    /* <!--TODO:--> */
     @media screen and (max-width: 860px) {
       .serviceBorder {
         display: flex;
@@ -306,10 +305,6 @@
           </section>
         `)
       }
-      //TODO: 無法顯示圖片
-      // for(let i=0; i<serviceContents.length; i++) {
-      //   $(`.serviceImg:nth-child(${i+1})`).css("background") = `url(${serviceContents[i].img})`
-      // }
 
       //serviceContent slide effect
       $(window).ready().scroll(() =>{
@@ -320,6 +315,7 @@
           const title = content.find(".title")
           const article = content.find("article")
           const englishTitle = content.find(".serviceContentDownContainer")
+          console.log(Math.abs(windowScrollTop - img.offset().top))
           //img
           if((Math.abs(windowScrollTop - img.offset().top)) < 500) {
             img.removeClass("hidden").removeClass("animate__fadeOutLeftBig").addClass("animate__fadeInLeftBig")

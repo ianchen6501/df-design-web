@@ -8,6 +8,10 @@
   <title>關於鼎鋒</title>
   <link rel="stylesheet" href="./static/css/header&footer.css">
   <link rel="stylesheet" href="./static/css/public.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <style>
     .wrapper {
       height: 100%;
@@ -63,7 +67,6 @@
     .introTitle {
       position: relative;
       display: inline-block;
-      right: 100vw;
       border-bottom: solid 0.5px white;
       transition: 1s right;
     }
@@ -84,8 +87,6 @@
       padding-top: 20px;
       color: rgb(233, 233, 233);
       line-height: 26px;
-      transition: 1s opacity;
-      transition-delay: 0.5s;
     }
 
     .designerContainer {
@@ -112,8 +113,6 @@
       position: relative;
       display: inline-block;
       border-bottom: solid 0.5px white;
-      left: 100vw;
-      transition: 1s left;
     }
 
     .designerTitle > div {
@@ -170,17 +169,17 @@
       white-space: pre;
     }
 
-    .moveLeft {
+    /* .moveLeft {
       left: 0px;
     }
 
     .moveRight {
       right: 0px;
-    }
+    } */
 
-    .appear {
+    /* .appear {
       opacity: 100% !important;
-    }
+    } */
 
     .showBackgroundColor {
       background-color: rgb(141, 141, 141) !important;
@@ -208,6 +207,10 @@
         /* left: 50%;
         transform: translateX(-50%); */
         transition: right 1s;
+      }
+
+      .hidden {
+        visibility: hidden;
       }
 
       /* .introTitle > div:nth-child(1) {
@@ -294,18 +297,18 @@
       <div class="svgText">關於鼎峰</div>
     </section>
     <div class="main">
-      <div class="banner">
-        <div>
+      <div class="banner" id="bannerA">
+        <div class="hidden animate__animated">
           <div>Introduction  公司簡介</div>
         </div>
       </div>
       <section class="introContainer">
         <div>
-          <div class="introTitle">
+          <div class="introTitle hidden animate__animated">
             <div>COMPANY PROFILE</div>
             <div>鼎峰理念</div>
           </div>
-          <div class="introContent">
+          <div class="introContent hidden animate__animated">
             鼎鋒團隊<br>
             傳承大匠座的追求與精神 如鼎堅實 如鋒精準<br>
             近三十年歲月裡<br>
@@ -318,15 +321,14 @@
             與時俱進 帶給顧客更多元的體驗與真實感動<br>        
           </div>
         </div>
-        <img class="introImg" height="450px" src="./static/img/aboutImg.jpg">
+        <img class="introImg hidden animate__animated" height="450px" src="./static/img/aboutImg.jpg">
       </section>
-      <div class="banner">
-        <div>
+      <div class="banner" id="bannerB">
+        <div class="hidden animate__animated">
           <div>Our Team  團隊組成</div>
         </div>
       </div>
-      <div class="designersContainer">
-      </div>
+      <div class="designersContainer"></div>
     <!-- footer -->
   </div>
   <script>
@@ -351,62 +353,6 @@
         });
       }
       ChangeHeaderLinksOnHover()
-
-      //scrollfflect
-      $(window).scroll(() => {
-        const windowHeight = $(window).height()
-        const windowWidth = $(window).width()
-        const windowScrollTop = $(window).scrollTop()
-        console.log(windowWidth)
-        //header
-        if(windowScrollTop <= 10) {
-          $(".headerContainer").css("top", "0px")
-        } else {
-          $(".headerContainer").css("top", "-100px")
-        }
-        //TODO:
-        //introduction
-        // while(windowWidth > 780) {
-        //   console.log("yoyo")
-        // }
-        if(windowScrollTop >= 200 && windowScrollTop <= 1200 && windowWidth >= 780) {
-          $(".banner:nth-child(1) > div").addClass("appear")
-        } else {
-          $(".banner:nth-child(1) > div").removeClass("appear")
-        }
-        if(windowScrollTop >= 500 && windowScrollTop <= 1200 && windowWidth >= 780) {
-          $(".introTitle").addClass("moveRight")
-          $(".introContent").addClass("appear")
-          $(".introImg").addClass("appear")
-          $(".introContainer > div").addClass("showBackgroundColor")
-        } else {
-          $(".introTitle").removeClass("moveRight")
-          $(".introContent").removeClass("appear")
-          $(".introImg").removeClass("appear")
-          $(".introContainer > div").removeClass("showBackgroundColor")
-        }
-        //designers
-        if(windowScrollTop >= 785 && windowScrollTop <= 3144 && windowWidth >= 780) {
-          $(".banner:nth-child(3) > div").addClass("appear")
-        } else {
-          $(".banner:nth-child(3) > div").removeClass("appear")
-        }
-        for(let i=0; i<4; i++) {
-          if(windowScrollTop >= 1020+i*550 && windowScrollTop <= 1020+windowHeight+i*550 && windowWidth >= 780) {
-            $(`.designerContainer:nth-child(${i+1}) > img`).addClass("appear")
-            $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).addClass("moveLeft")
-            $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).addClass("appear")
-            $(`.designerContainer:nth-child(${i+1}) > div`).addClass("showBackgroundColor")
-          } else {
-            $(`.designerContainer:nth-child(${i+1}) > img`).removeClass("appear")
-            $(`.designerContainer:nth-child(${i+1}) > div > .designerTitle`).removeClass("moveLeft")
-            $(`.designerContainer:nth-child(${i+1}) > div > .designerContent`).removeClass("appear")
-            $(`.designerContainer:nth-child(${i+1}) > div`).removeClass("showBackgroundColor")
-          }
-        }
-
-
-      })
 
       //desinerInit
       const desinerInfo = [
@@ -464,13 +410,13 @@
       desinerInfo.map(data => {
         $(".designersContainer").append(`
           <section class="designerContainer">
-            <img class="designerImg" height="450px" src="./static/img/portrait/austin.jpg">
+            <img class="designerImg hidden animate__animated" height="450px" src="./static/img/portrait/austin.jpg">
             <div>
-              <div class="designerTitle">
+              <div class="designerTitle hidden animate__animated">
                 <div>${data.title}</div>
                 <div>${data.name} ${data.englishName}</div>
               </div>
-              <div class="designerContent">${data.projects}</div>
+              <div class="designerContent hidden animate__animated">${data.projects}</div>
               <div class="designerContent">${data.introduction ? data.introduction : ""}</div>
             </div>
           </section>
@@ -488,6 +434,71 @@
         } else {
           $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
           $("#headerRightContainer").removeClass("popUpHeaderRightContainer").addClass("headerRightContainer")
+        }
+      })
+
+      //scrollEffect
+      $(window).scroll(() => {
+        const windowHeight = $(window).height()
+        const windowWidth = $(window).width()
+        const windowScrollTop = $(window).scrollTop()
+
+        //header
+        if(windowScrollTop <= 10) {
+          $(".headerContainer").css("top", "0px")
+        } else {
+          $(".headerContainer").css("top", "-100px")
+        }
+        //banner
+          const bannerA = $(`#bannerA`)
+          const bannerTitleA = bannerA.children("div")
+          const bannerB = $(`#bannerB`)
+          const bannerTitleB = bannerB.children("div")
+          function bannerEffect(target) {
+            if((Math.abs(target.offset().top - windowScrollTop)) < 500) {
+              target.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            } else {
+              target.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            }
+          }
+          bannerEffect(bannerTitleA)
+          bannerEffect(bannerTitleB)
+        //intro
+        const container = $(".introContainer")
+        if((Math.abs(bannerTitleA.offset().top - windowScrollTop)) < 600) {
+          $(".introTitle").removeClass("hidden").removeClass("animate__fadeOutLeft").addClass("animate__fadeInLeft")
+          $(".introContent").removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+          $(".introImg").removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+          $(".introContainer > div").addClass("showBackgroundColor")
+        } else {
+          $(".introTitle").removeClass("animate__fadeInLeft").addClass("animate__fadeOutLeft")
+          $(".introContent").removeClass("animate__fadeIn").addClass("animate__fadeOut")
+          $(".introImg").removeClass("animate__fadeIn").addClass("animate__fadeOut")
+          $(".introContainer > div").removeClass("showBackgroundColor")
+        }
+        //TODO: designers
+        // if(windowScrollTop >= 785 && windowScrollTop <= 3144 && windowWidth >= 780) {
+        //   $(".banner:nth-child(3) > div").addClass("appear")
+        // } else {
+        //   $(".banner:nth-child(3) > div").removeClass("appear")
+        // }
+        for(let i=1; i<=desinerInfo.length; i++) {
+          const designerContainer = $(`.designerContainer:nth-child(${i})`)
+          const img = designerContainer.find("img")
+          const title = designerContainer.find(".designerTitle")
+          const content = designerContainer.find(".designerContent")
+          const background = designerContainer.children("div")
+          if(Math.abs(designerContainer.offset().top - windowScrollTop) < 500) {
+            img.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            title.removeClass("hidden").removeClass("animate__fadeOutRight").addClass("animate__fadeInRight")
+            content.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            background.addClass("showBackgroundColor")
+          } else {
+            img.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            title.removeClass("animate__fadeInRight").addClass("animate__fadeOutRight")
+            content.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            background.removeClass("showBackgroundColor")
+          }
         }
       })
 
