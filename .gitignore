@@ -20,6 +20,8 @@ gulpfile.js
 # production
 /build
 /express
+/public
+firebase.json
 
 # misc
 .DS_Store

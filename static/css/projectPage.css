@@ -1,5 +1,6 @@
 body {
-  background-color: gray;
+  background-color: #373c38;
+  color: #bdc0ba;
 }
 
 .wrapper {
@@ -12,7 +13,7 @@ body {
   left: 0px;
   right: 0px;
   margin: auto;
-  border: solid 1px white;
+  border: solid 1px #bdc0ba;
 
   animation: open 1s linear 1;
   animation-fill-mode: forwards;
@@ -45,20 +46,24 @@ section {
 
 button {
   position: absolute;
+  display: flex;
   justify-self: start;
+  align-items: center;
   height: 30px;
   top: 0;
   bottom: 0;
   margin: auto;
   border: none;
-  background: transparent;
-  color: white;
-  font-size: 20px;
-  font-weight: 900;
+  background-color: #bdc0ba;
+  color: #828282;
+  font-size: 12px;
+  font-weight: 400;
   cursor: pointer;
+  transition: 1s color;
 }
 
 button:nth-child(1) {
+  /* font-weight: 900; */
   left: 0px;
 }
 
@@ -67,7 +72,7 @@ button:nth-child(3) {
 }
 
 button:hover {
-  font-size: 22px;
+  color: #373c38;
 }
 
 button:focus {
@@ -78,7 +83,7 @@ button:focus {
   width: calc(100% - 200px);
   object-fit: cover;
   opacity: 0;
-  box-shadow: 1px 1px 2px black;
+  /* box-shadow: 1px 1px 2px black; */
 
   animation: appear 0.5s ease-in-out 1s 1;
   animation-fill-mode: forwards;
@@ -116,6 +121,7 @@ footer {
   }
 
   .img {
-    width: calc(100% - 60px);
+    width: calc(100% - 100px);
+    object-fit: contain;
   }
 }
