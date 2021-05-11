@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鼎鋒團隊 傳承大匠座的追求與精神 如鼎堅實 如鋒精準">
+  <meta name="keywords" content="鼎鋒設計 關於鼎鋒 鼎鋒理念 室內設計 設計師">
+  <meta name="author" content="鼎鋒設計">
+  <meta name="copyright" content="鼎鋒設計">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="./js/header&footer.js"></script>
   <title>關於鼎鋒</title>
@@ -134,9 +138,6 @@
       white-space: pre-line;
       color: rgb(233, 233, 233);
       line-height: 26px;
-      opacity: 0%;
-      transition: 1s opacity;
-      transition-delay: 0.5s;
     }
 
     .banner {
@@ -185,6 +186,10 @@
       background-color: rgb(141, 141, 141) !important;
     }
 
+    .hidden {
+      visibility: hidden;
+    }
+
     @media screen and (max-width: 1080px) {
       .introContainer {
         flex-direction: column-reverse;
@@ -207,10 +212,6 @@
         /* left: 50%;
         transform: translateX(-50%); */
         transition: right 1s;
-      }
-
-      .hidden {
-        visibility: hidden;
       }
 
       /* .introTitle > div:nth-child(1) {
@@ -417,7 +418,7 @@
                 <div>${data.name} ${data.englishName}</div>
               </div>
               <div class="designerContent hidden animate__animated">${data.projects}</div>
-              <div class="designerContent">${data.introduction ? data.introduction : ""}</div>
+              <div class="designerContent hidden animate__animated">${data.introduction ? data.introduction : ""}</div>
             </div>
           </section>
         `)
@@ -486,17 +487,20 @@
           const designerContainer = $(`.designerContainer:nth-child(${i})`)
           const img = designerContainer.find("img")
           const title = designerContainer.find(".designerTitle")
-          const content = designerContainer.find(".designerContent")
+          const contentA = designerContainer.find(".designerContent:nth-child(2)")
+          const contentB = designerContainer.find(".designerContent:nth-child(3)")
           const background = designerContainer.children("div")
           if(Math.abs(designerContainer.offset().top - windowScrollTop) < 500) {
             img.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
             title.removeClass("hidden").removeClass("animate__fadeOutRight").addClass("animate__fadeInRight")
-            content.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            contentA.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
+            contentB.removeClass("hidden").removeClass("animate__fadeOut").addClass("animate__fadeIn")
             background.addClass("showBackgroundColor")
           } else {
             img.removeClass("animate__fadeIn").addClass("animate__fadeOut")
             title.removeClass("animate__fadeInRight").addClass("animate__fadeOutRight")
-            content.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            contentA.removeClass("animate__fadeIn").addClass("animate__fadeOut")
+            contentB.removeClass("animate__fadeIn").addClass("animate__fadeOut")
             background.removeClass("showBackgroundColor")
           }
         }
