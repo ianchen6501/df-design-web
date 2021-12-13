@@ -1,0 +1,127 @@
+body {
+  background-color: #373c38;
+  color: #bdc0ba;
+}
+
+.wrapper {
+  position: absolute;
+  display: inline-block;
+  height: calc(100vh - 60px);
+  width: 30vw;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  border: solid 1px #bdc0ba;
+
+  animation: open 1s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes open {
+  100% {
+    width: 90vw;
+  }
+}
+
+.wrapper:hover {
+  width: 0;
+}
+
+nav {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  height: calc(100% - 100px);
+}
+
+button {
+  position: absolute;
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  height: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: none;
+  background-color: #bdc0ba;
+  color: #828282;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 1s color;
+}
+
+button:nth-child(1) {
+  /* font-weight: 900; */
+  left: 0px;
+}
+
+button:nth-child(3) {
+  right: 0px;
+}
+
+button:hover {
+  color: #373c38;
+}
+
+button:focus {
+  outline: none;
+}
+
+.img {
+  width: calc(100% - 200px);
+  object-fit: cover;
+  opacity: 0;
+  /* box-shadow: 1px 1px 2px black; */
+
+  animation: appear 0.5s ease-in-out 1s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  100% {
+    opacity: 100;
+  }
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.backDirector {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border: solid 5px white;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 780px) {
+  .wrapper {
+    height: 50%;
+  }
+
+  .img {
+    width: calc(100% - 100px);
+    object-fit: contain;
+  }
+}

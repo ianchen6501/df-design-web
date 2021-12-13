@@ -1,0 +1,30 @@
+html,
+body {
+  font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background: #1c1c1c;
+  color: white;
+  box-sizing: border-box;
+}
+
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

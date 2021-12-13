@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鼎鋒團隊 傳承大匠座的追求與精神 如鼎堅實 如鋒精準">
+  <meta name="keywords" content="鼎鋒設計 室內設計">
+  <meta name="author" content="鼎鋒設計">
+  <meta name="copyright" content="鼎鋒設計">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="./js/header&footer.js"></script>
+  <title>鼎峰設計 | DIN FONG DESIGN</title>
+  <link rel="stylesheet" href="./static/css/header&footer.css">
+  <link rel="stylesheet" href="./static/css/public.css">
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3019843868297473');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3019843868297473&ev=PageView&noscript=1"/></noscript>
+  <style>
+    .wrapper {
+      position: relative;
+      height: 100%;
+    }
+
+    .backgroundImgSlide {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .backgroundImgSlide div {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      animation: slide 25s linear infinite;
+    }
+
+    .backgroundImgSlide div img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      filter: grayscale(50%) contrast(120%) brightness(60%);
+      transform: scale(1.2);
+    }
+
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+
+      5% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      10% {
+        opacity: 1;
+        transform: scale(1.14);
+      }
+
+      15% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      25% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    .backgroundImgSlide div:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .backgroundImgSlide div:nth-child(2) {
+      animation-delay: 5s;
+    }
+
+    .backgroundImgSlide div:nth-child(3) {
+      animation-delay: 10s;
+    }
+
+    .backgroundImgSlide div:nth-child(4) {
+      animation-delay: 15s;
+    }
+
+    .backgroundImgSlide div:nth-child(5) {
+      animation-delay: 20s;
+    }
+
+    /* .headerBackground {
+      position: fixed;
+      width: 100%;
+      height: 500px;
+      background: url(./static/img/header2.jpg);
+      background-attachment: fixed;
+      background-position: top;
+      background-repeat: no-repeat;
+      color: #080808;
+    } */
+
+    .main {
+      height: 100%;
+    }
+
+    .container {
+      position: relative;
+      width: fit-content;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transform: translateY(-50%);
+      transition: 1s background-color;
+      cursor: pointer;
+    }
+
+    .container:hover {
+      animation: shine 3s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-color: transparent;
+      }
+      50% {
+        background-color: rgba(255,255,255,0.2);
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+    
+    .mainBorder {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      background: transparent;
+      border: 1px solid white;
+      transition: 1s border;
+
+      animation: scale 1s linear 1;
+      animation-fill-mode: forwards; 
+    }
+
+    @keyframes scale {
+      100% {
+        width: 400px;
+      }
+    }
+
+    .mainBorder:hover {
+      background-color: rgba(255, 255, 255 0.3);
+    }
+
+    .mainTitle {
+      position: relative;
+      color:white;
+      font-size: 20px;
+      font-weight: 900;
+      text-align: center;
+      opacity: 0;
+
+      animation: transparency 1s linear 1;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes transparency {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .mainTitle > h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .mainTitle > h3:last-child::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 0.5px;
+      background-color: white;
+      transform: translateY(-5px);
+    }
+
+    @media screen and (max-width: 780px) {
+      .mainBorder {
+        width: fit-content;
+        height: 120px;
+        padding: 0px 20px;
+        animation: none;
+      }
+
+      .mainTitle > h3 {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="backgroundImgSlide">
+      <div>
+        <img src="./static/img/index_backgroundImg/index_1.jpg"> 
+      </div>
+      <div>
+        <img src="./static/img/index_backgroundImg/index_2.jpg"> 
+      </div>
+      <div>
+        <img src="./static/img/index_backgroundImg/index_3.jpg"> 
+      </div>
+      <div>
+        <img src="./static/img/index_backgroundImg/index_4.jpg"> 
+      </div>
+      <div>
+        <img src="./static/img/index_backgroundImg/index_5.jpg"> 
+      </div>
+    </div>
+    <header class="header"></header>
+    <main class="main">
+        <a class="container" href="./aboutPage.html">
+          <div class="mainBorder">
+            <div class="mainTitle" ">
+              <h3>探索鼎鋒</h3>
+              <h3>DIN FONG DESIGN</h3>
+            </div>
+          </div>
+        </a>
+    </main>
+  </div>
+
+  <script>
+    //init
+    $(window).ready(() =>{
+      //header init
+      const headerContainer = $(".header")
+      headerContainer.append(headerDOM)
+      $(".headerContainer").css("top", "0px")
+
+      //headerHoverEffect
+      function ChangeHeaderLinksOnHover() {
+        const headerNames = ["About", "Projects", "Service", "News", "Contacts"]
+        const headerHoverNames = ["關於鼎鋒", "鼎鋒作品", "鼎鋒服務", "最新消息", "聯絡我們"]
+        headerNames.map((element, index) => {
+          $(`.headerLink:nth-child(${index+1})`).hover(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(headerHoverNames[index])
+          })
+          $(`.headerLink:nth-child(${index+1})`).mouseleave(() => {
+            $(`.headerLink:nth-child(${index+1})`).text(element)
+          })
+        });
+      }
+      ChangeHeaderLinksOnHover()
+
+      //headerSlideEfflect
+      $(window).scroll(() => {
+        const windowHeight = $(window).height()
+        const windowScrollTop = $(window).scrollTop()
+        if(windowScrollTop <= 10) {
+          $(".headerContainer").css("top", "0px")
+        } else {
+          $(".headerContainer").css("top", "-100px")
+        }
+      })
+      //popUpHeader init
+      let isPopUp = false
+      $(".sidebarButton").on("click", () => {
+        isPopUp = !isPopUp
+        if(isPopUp) {
+          $("#headerContainer").removeClass("headerContainer").addClass("popUpHeaderContainer")
+          $("#headerRightContainer").removeClass("headerRightContainer").addClass("popUpHeaderRightContainer")
+        } else {
+          $("#headerContainer").removeClass("popUpHeaderContainer").addClass("headerContainer")
+          $("#headerRightContainer").removeClass("popUpHeaderRightContainer").addClass("headerRightContainer")
+        }
+      })
+    })
+  </script>
+</body>
+</html>

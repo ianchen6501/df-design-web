@@ -18,11 +18,10 @@ gulpfile.js
 /portrait
 
 # production
-/build
 /express
-/public
 firebase.json
-/.firebaserc
+/.firebase
+.firebaserc
 
 # misc
 .DS_Store

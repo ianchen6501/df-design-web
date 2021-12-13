@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <title>鼎鋒作品</title>
+  <link rel="stylesheet" href="../static/css/public.css">
+  <link rel="stylesheet" href="../static/css/projectPage.css">
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3019843868297473');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3019843868297473&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+  <div class="wrapper">
+    <nav>- 優 雅 歐 風 -</nav>
+    <section>
+      <button id="backward">PREV</button>
+      <img class="img">
+      <button id="forward">NEXT</button>
+    </section>
+    <footer>
+      <a href="../projectPage.html" class="backDirector"></a>
+    </footer>
+  </div>
+  <script>
+    const imgs = [
+      "../static/img/2017優雅歐風系列寢居/1.jpg",
+      "../static/img/2017優雅歐風系列寢居/2.jpg",
+      "../static/img/2017優雅歐風系列寢居/3.jpg",
+      "../static/img/2017優雅歐風系列寢居/4.jpg"
+    ]
+    const imgsLength = imgs.length
+    let currentImg = 0
+
+    $(window).ready(() => {
+      $("img").attr("src", imgs[0])
+    })
+    //下一張
+    $("#forward").on("click", () => {
+      if(currentImg !== imgsLength - 1) {
+        $("img").attr("src", imgs[currentImg + 1])
+        currentImg ++
+      }
+    })
+    //上一張
+    $("#backward").on("click", () => {
+      if(currentImg !== 0) {
+        $("img").attr("src", imgs[currentImg - 1])
+        currentImg --
+      }
+    })
+  </script>
+</body>
+</html>
