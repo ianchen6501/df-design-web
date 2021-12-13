@@ -16,6 +16,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="icon" type="image/x-icon" href="./static/img/df-design.ico">
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -379,7 +380,7 @@
           楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)
           中壢 海華大地               趙宅 (125坪)
           `,
-          imagePath: "./static/img/portrait/austin.jpg",
+          imagePath: "",
         },
         {
           title: "創辦人",
@@ -390,7 +391,7 @@
           桃園 永安尊爵 五層別墅 李宅(125坪)
           桃園 菓林自建住宅      楊宅 (100坪)
           `,
-          imagePath: "./static/img/portrait/austin.jpg",
+          imagePath: "",
         },
         {
           title: "設計師",
@@ -408,7 +409,7 @@
           桃園 中悅御之苑       張宅 (125坪)
           桃園 國泰國家都會     曾宅 (35坪)
           `,
-          imagePath: "./static/img/portrait/austin.jpg",
+          imagePath: "./static/img/portrait/SIXLIN60-2.JPG",
         },
         {
           title: "設計師",
@@ -422,13 +423,13 @@
           桃園 弘濟皇璽     江宅(50坪)
           龍潭 扶輪社公益幸福基金會 牙科診間
           `,
-          imagePath: "./static/img/portrait/austin.jpg",
+          imagePath: "./static/img/portrait/SIXLIN60-5.JPG",
         },
       ]
       desinerInfo.map(data => {
         $(".designersContainer").append(`
           <section class="designerContainer">
-            <img class="designerImg hidden animate__animated" height="450px" src="./static/img/portrait/austin.jpg">
+            <img class="designerImg hidden animate__animated" height="450px" src='${data.imagePath}'>
             <div>
               <div class="designerTitle hidden animate__animated">
                 <div>${data.title}</div>
