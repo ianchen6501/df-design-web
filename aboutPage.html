@@ -16,6 +16,19 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3019843868297473');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3019843868297473&ev=PageView&noscript=1"/></noscript>
   <style>
     .wrapper {
       height: 100%;
@@ -365,7 +378,8 @@
           桃園 永安豪景 五層別墅      曾宅 (325坪)
           楊梅 青鼎帝悅透天 三層別墅  馬宅(187坪)
           中壢 海華大地               趙宅 (125坪)
-          `
+          `,
+          imagePath: "./static/img/portrait/austin.jpg",
         },
         {
           title: "創辦人",
@@ -375,7 +389,8 @@
           桃園 藝術年鑑          林宅 (97坪)
           桃園 永安尊爵 五層別墅 李宅(125坪)
           桃園 菓林自建住宅      楊宅 (100坪)
-          `
+          `,
+          imagePath: "./static/img/portrait/austin.jpg",
         },
         {
           title: "設計師",
@@ -392,7 +407,8 @@
           桃園 中悅麗舍花園     柯宅 (150坪)
           桃園 中悅御之苑       張宅 (125坪)
           桃園 國泰國家都會     曾宅 (35坪)
-          `
+          `,
+          imagePath: "./static/img/portrait/austin.jpg",
         },
         {
           title: "設計師",
@@ -405,7 +421,8 @@
           桃園 中悅中央公園 曾宅(98坪) 
           桃園 弘濟皇璽     江宅(50坪)
           龍潭 扶輪社公益幸福基金會 牙科診間
-          `
+          `,
+          imagePath: "./static/img/portrait/austin.jpg",
         },
       ]
       desinerInfo.map(data => {
